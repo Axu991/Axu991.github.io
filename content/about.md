@@ -13,6 +13,7 @@ I am passionate about building full-stack robotics systems, spanning from **mech
 ## Education
 
 **ShanghaiTech University** | *2024 – 2027 (Expected)*  
+
 *M.Sc. in Electronic Science and Technology*  
 
 - Research Focus:  
@@ -21,6 +22,7 @@ I am passionate about building full-stack robotics systems, spanning from **mech
   - Sim-to-Real Transfer  
 
 **Hunan University of Science and Technology (HNUST)** | *2020 – 2024*
+
 *B.Eng. in Mechanical Design, Manufacturing and Automation*  
 
 - Key Focus:  
@@ -33,13 +35,15 @@ I am passionate about building full-stack robotics systems, spanning from **mech
 ## Research & Experience
 
 **Model-free Autonomous Agent and Intelligent Control (MAgIC) Lab** ｜*2024.09 – Present*
+
 *Graduate Research Assistant (Robotics)*  
 
 - Research on bio-inspired underwater robots and learning-based control.
-- Developing reinforcement learning frameworks for locomotion and maneuvering.
+- Developing reinforcement learning strategies for locomotion and maneuvering.
 - Investigating Sim-to-Real transfer for robotic control policies.
 
 **AEROCAE Digital Tech. Ltd.**｜*2024.03 – 2024.05*
+
 *Simulation Software Testing Intern*  
 
 - Processed experimental datasets and conducted CFD simulation runs.
