@@ -16,12 +16,17 @@ theme = 'PaperMod'
     subtitle = "机器人控制 | 具身智能 | 嵌入式开发"
     imageUrl = "" # 这里可以放你的头像链接，放在 static/ 目录下
 
-[menu]
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 1
   [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
     weight = 2
+
+  [[menu.main]]
+    name = "Gallery" # 建议修正拼写
+    url = "/gallery/"
+    weight = 3
