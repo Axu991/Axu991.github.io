@@ -1,6 +1,6 @@
 baseURL = 'https://Axu991.github.io/'
 languageCode = 'en-us'
-title = 'Huang Xu | Robotics Engineer'
+title = 'Huang Xu | Homepage'
 theme = 'PaperMod'
 
 [params]
@@ -9,11 +9,12 @@ theme = 'PaperMod'
   ShowShareButtons = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
-  
+  disableFingerprinting = true
+
   [params.profileMode]
     enabled = true
     title = "Huang Xu"
-    subtitle = "机器人控制 | 具身智能 | 嵌入式开发"
+    subtitle = "水下机器人 | 仿生机器鱼 | 嵌入式开发"
     imageUrl = "" # 这里可以放你的头像链接，放在 static/ 目录下
 
   [[menu.main]]
@@ -27,6 +28,12 @@ theme = 'PaperMod'
     weight = 2
 
   [[menu.main]]
-    name = "Gallery" # 建议修正拼写
+    name = "Gallery"
     url = "/gallery/"
     weight = 3
+
+  [[menu.main]]
+    name = "Log"
+    url = "/log/"
+    weight = 4
+

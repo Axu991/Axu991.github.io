@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Huang Xu | Robotics Engineer</title>
+    <title>Huang Xu | Homepage</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Huang Xu | Robotics Engineer</description>
+    <description>Recent content on Huang Xu | Homepage</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Mar 2026 17:32:05 +0800</lastBuildDate>
@@ -13,19 +13,23 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 13 Mar 2026 17:32:05 +0800</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Hello! I am Huang Xu. I am currently focused on &lt;strong&gt;bio-inspired underwater robotics&lt;/strong&gt;, &lt;strong&gt;reinforcement learning for motion control&lt;/strong&gt;, and &lt;strong&gt;Sim2real transfer&lt;/strong&gt;. I am passionate about building full-stack robotics systems, from low-level embedded control and hardware integration to high-level intelligent algorithms, ensuring seamless deployment in real-world environments.&lt;/p&gt;
-&lt;h2 id=&#34;technical-stack&#34;&gt;Technical Stack&lt;/h2&gt;
+      <description>&lt;p&gt;Hello! I am &lt;strong&gt;Huang Xu&lt;/strong&gt;, a graduate student specializing in &lt;strong&gt;bio-inspired underwater robotics&lt;/strong&gt;, &lt;strong&gt;reinforcement learning for motion control&lt;/strong&gt;, and &lt;strong&gt;Sim-to-Real transfer&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I am passionate about building full-stack robotics systems, spanning from &lt;strong&gt;mechanical design and embedded control&lt;/strong&gt; to &lt;strong&gt;intelligent algorithms&lt;/strong&gt;, with the goal of enabling robust deployment in real-world environments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;ShanghaiTech University&lt;/strong&gt; | &lt;em&gt;2024 – 2027 (Expected)&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;M.Sc. in Electronic Science and Technology&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Programming&lt;/strong&gt;: C, C++ ,Python(Ros, PyTorch)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;: ESP32, Arduino, CAN, servo&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Control&lt;/strong&gt;: PID, MPC, Reforcement Learning&lt;/li&gt;
+&lt;li&gt;Research Focus:
+&lt;ul&gt;
+&lt;li&gt;Bio-inspired Underwater Robotics&lt;/li&gt;
+&lt;li&gt;Reinforcement Learning for Motion Control&lt;/li&gt;
+&lt;li&gt;Sim-to-Real Transfer&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/Axu991&#34;&gt;github.com/Axu991&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: [huangxu2024@shanghaitech.edu.cn]&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: &lt;a href=&#34;https://magiclab.sist.shanghaitech.edu.cn&#34;&gt;Shanghai / Shanghaitech University / Model-free Autonomous Agent and Intelligent Control (MAgIC) Lab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Hunan University of Science and Technology (HNUST)&lt;/strong&gt; | &lt;em&gt;2020 – 2024&lt;/em&gt;
+&lt;em&gt;B.Eng. in Mechanical Design, Manufacturing and Automation&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
