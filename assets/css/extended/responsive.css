@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+    .main { padding: 0 15px; }
+    .update-log p { flex-direction: column; }
+    .edu-item { flex-direction: column; align-items: flex-start; }
+}

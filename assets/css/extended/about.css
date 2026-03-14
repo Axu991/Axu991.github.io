@@ -1,0 +1,22 @@
+/* 1. 强制容器进行两端对齐布局 */
+.post-content p:has(strong + em), 
+.post-content p:has(strong + text) {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 0.5rem !important;
+}
+
+
+.post-content p {
+    /* 这里的选择器用于针对包含竖线的文本进行处理 */
+    font-size: inherit;
+}
+
+/* 针对日期文字的精细修饰 */
+.post-content p em:last-child {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    margin-left: auto; /* 这一行是确保日期靠右的关键 */
+}

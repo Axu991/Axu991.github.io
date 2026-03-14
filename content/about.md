@@ -12,18 +12,18 @@ I am passionate about building full-stack robotics systems, spanning from **mech
 
 ## Education
 
-**ShanghaiTech University** | *2024 – 2027 (Expected)*  
+**ShanghaiTech University**  *2024 – 2027 (Expected)*  
 
-*M.Sc. in Electronic Science and Technology*  
+M.Sc. in **Electronic Science and Technology**
 
 - Research Focus:  
   - Bio-inspired Underwater Robotics  
   - Reinforcement Learning for Motion Control  
   - Sim-to-Real Transfer  
 
-**Hunan University of Science and Technology (HNUST)** | *2020 – 2024*
+**Hunan University of Science and Technology (HNUST)**  *2020 – 2024*
 
-*B.Eng. in Mechanical Design, Manufacturing and Automation*  
+B.Eng. in **Mechanical Design, Manufacturing and Automation**
 
 - Key Focus:  
   - Mechanical System Design  
@@ -34,17 +34,17 @@ I am passionate about building full-stack robotics systems, spanning from **mech
 
 ## Research & Experience
 
-**Model-free Autonomous Agent and Intelligent Control (MAgIC) Lab** ｜*2024.09 – Present*
+**Model-free Autonomous Agent and Intelligent Control (MAgIC) Lab** *2024.09 – Present*
 
-*Graduate Research Assistant (Robotics)*  
+Graduate Research Assistant (Robotics)  
 
 - Research on bio-inspired underwater robots and learning-based control.
 - Developing reinforcement learning strategies for locomotion and maneuvering.
 - Investigating Sim-to-Real transfer for robotic control policies.
 
-**AEROCAE Digital Tech. Ltd.**｜*2024.03 – 2024.05*
+**AEROCAE Digital Tech. Ltd.** *2024.03 – 2024.05*
 
-*Simulation Software Testing Intern*  
+Simulation Software Testing Intern  
 
 - Processed experimental datasets and conducted CFD simulation runs.
 - Tested simulation models including UAV airfoils and automotive aerodynamic designs.
@@ -54,30 +54,10 @@ I am passionate about building full-stack robotics systems, spanning from **mech
 
 ## Technical Skills
 
-**Mechanical**
-
-- SolidWorks
-- CAD Design
-- Mechanism Design
-- 3D Printing
-
-**Programming**
-
-- C / C++
-- Python (ROS, PyTorch)
-
-**Embedded Systems**
-
-- ESP32
-- Arduino
-- CAN Bus
-- Servo Control
-
-**Control & Robotics**
-
-- PID Control
-- Model Predictive Control (MPC)
-- Reinforcement Learning
+**Mechanical:** SolidWorks, CAD Design, Mechanism Design, 3D Printing  
+**Programming:** C / C++, Python (ROS, PyTorch)  
+**Embedded:** ESP32, Arduino, CAN Bus, Servo Control  
+**Control:** PID Control, MPC, Reinforcement Learning
 
 ---
 

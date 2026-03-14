@@ -1,0 +1,35 @@
+:root {
+    /* --- Color Palette --- */
+    --color-primary: #122e49; 
+    --color-text-main: #151111;
+    --color-text-muted: #666666;
+    --color-text-date: #070707;
+    --color-border: #eeeeee;
+    --color-link: #007bff;
+    --color-hover-bg: rgba(223, 6, 10, 0.03);
+    
+    /* --- Typography --- */
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-date: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    /* --- Layout Dimensions --- */
+    --main-width: 820px;
+}
+
+.main { max-width: var(--main-width); margin: auto; padding: 0 20px; }
+
+.post-content {
+    font-family: var(--font-stack);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-main);
+    text-align: justify;
+}
+
+.post-content h2 { 
+    margin: 1.5rem 0 0.5rem; 
+    padding-bottom: 0.3rem; 
+    border-bottom: 1px solid var(--color-border);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
