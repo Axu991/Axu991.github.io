@@ -31,13 +31,13 @@ publishDir = "docs"
     weight = 2
 
   [[menu.main]]
-    name = "Gallery"
-    url = "/gallery/"
+    name = "Blogs"
+    url = "/blogs/"
     weight = 3
 
   [[menu.main]]
-    name = "Logs"
-    url = "/logs/"
+    name = "Updates"
+    url = "/updates/"
     weight = 4
 
 
