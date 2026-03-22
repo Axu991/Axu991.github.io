@@ -3,57 +3,42 @@ theme = 'PaperMod'
 relativeURLs = false
 publishDir = "docs"
 
+
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 
 [params]
     defaultTheme = "light"
     ShowReadingTime = true
-    ShowShareButtons = true
+    ShowShareButtons = false
     ShowBreadCrumbs = false
     ShowPostNavLinks = true
     disableFingerprinting = true
+    ShowFullTextContent = true
+
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/Axu991"
+[[params.socialIcons]]
+    name = "bilibili"
+    url = "https://space.bilibili.com/23822195"
+[[params.socialIcons]]
+    name = "xhs"
+    url = "https://www.xiaohongshu.com/user/profile/62fce08e000000000f00737d"
+[[params.socialIcons]]
+    name = "email"
+    url = "mailto:huangxu2024@shanghaitech.edu.cn"
+
+
 
 [markup.goldmark.renderer]
     unsafe = true
-
-# ==================== 中文配置 (zh) ====================
-[languages.zh]
-    languageName = "中文"
-    contentDir = "content/zh"
-    weight = 1
-    title = "黄旭 | 个人主页"
-
-    [[languages.zh.menu.main]]
-        name = "关于"
-        url = "about/"
-        weight = 1
-    [[languages.zh.menu.main]]
-        name = "项目"
-        url = "projects/"
-        weight = 2
-    [[languages.zh.menu.main]]
-        name = "博客"
-        url = "blogs/"
-        weight = 3
-    [[languages.zh.menu.main]]
-        name = "动态"
-        url = "updates/"
-        weight = 4
-
-    # 最后定义 Params (普通 Table 放在后面)
-    [languages.zh.params]
-        [languages.zh.params.profileMode]
-            enabled = true
-            title = "Learn And Live"
-            subtitle = "仿生机器鱼 | 嵌入式开发 | 强化学习"
-            imageUrl = "" 
 
 # ==================== 英文配置 (en) ====================
 [languages.en]
     languageName = "English"
     contentDir = "content/en"
-    weight = 2
+    weight = 1
     title = "Xu Huang | Homepage"
 
     [[languages.en.menu.main]]
@@ -78,4 +63,37 @@ enableRobotsTXT = true
             enabled = true
             title = "Learn And Live"
             subtitle = "Biomimetic Robotic Fish | Embedded Development | RL"
+            imageUrl = "" 
+
+
+# ==================== 中文配置 (zh) ====================
+[languages.zh]
+    languageName = "中文"
+    contentDir = "content/zh"
+    weight = 2
+    title = "黄旭 | 个人主页"
+
+    [[languages.zh.menu.main]]
+        name = "关于"
+        url = "about/"
+        weight = 1
+    [[languages.zh.menu.main]]
+        name = "项目"
+        url = "projects/"
+        weight = 2
+    [[languages.zh.menu.main]]
+        name = "博客"
+        url = "blogs/"
+        weight = 3
+    [[languages.zh.menu.main]]
+        name = "动态"
+        url = "updates/"
+        weight = 4
+
+    [languages.zh.params]
+        [languages.zh.params.profileMode]
+            enabled = true
+            title = "Learn And Live"
+            subtitle = "仿生机器鱼 | 嵌入式开发 | 强化学习"
             imageUrl = ""
+            

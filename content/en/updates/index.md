@@ -1,8 +1,8 @@
-+++
-title = "Updates & News"
-layout = "page"
-showToc = false
-+++
+---
+title: "Updates & News"
+layout: "page"
+slug: "updates"
+---
 
 <div class="update-log">
 

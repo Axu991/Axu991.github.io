@@ -1,8 +1,8 @@
-+++
-title = "About Me"
-date = "2026-03-13T17:32:05+08:00"
-draft = false
-+++
+---
+title: "About Me"
+date: "2026-03-13T17:32:05+08:00"
+slug: "about"
+---
 
 Hello! I am **Xu Huang**, a graduate student specializing in **bio-inspired underwater robotics**, **reinforcement learning for motion control**, and **Sim-to-Real transfer**.
 

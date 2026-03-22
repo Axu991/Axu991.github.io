@@ -1,5 +1,6 @@
 ---
 title: "Some thoughts"
+slug: "blogs"
 ---
 
 > "Collecting the sparks of ideas, before they fade into the noise."
