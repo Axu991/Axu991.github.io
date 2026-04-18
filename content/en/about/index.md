@@ -8,7 +8,7 @@ Hello! I am **Xu Huang**, a graduate student specializing in **bio-inspired unde
 
 I am passionate about building full stack robotics systems, spanning from **mechanical design and embedded control** to **intelligent algorithms**, with the goal of enabling robust deployment in real-world environments.
 
-[CV right here (PDF)](/cv.pdf)
+[CV right here (PDF)](/cv_english.pdf)
 
 ---
 
