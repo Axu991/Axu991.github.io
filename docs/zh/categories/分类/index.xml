@@ -10,10 +10,16 @@
     <atom:link href="http://localhost:1313/zh/categories/%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>学习freertos</title>
-      <link>http://localhost:1313/zh/blogs/2026/the-first-post/</link>
+      <link>http://localhost:1313/zh/blogs/2026/freertos_tutorials_0/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/zh/blogs/2026/the-first-post/</guid>
-      <description>&lt;p&gt;这里开始写你的正文内容&amp;hellip;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/zh/blogs/2026/freertos_tutorials_0/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;FreeRTOS 是一个开源、轻量级、确定性强的实时内核，它通过基于优先级的抢占式任务调度，在内存受限的嵌入式设备上实现高效的多任务并行管理。文档信息请参考 ——&amp;raquo; &lt;a href=&#34;https://www.freertos.org&#34;&gt;freertos.org&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;内核作为操作系统的核心组件，负责管理处理器时间和资源。在 FreeRTOS 中，内核采用&lt;strong&gt;基于优先级的抢占式调度算法&lt;/strong&gt;：每个任务被分配一个优先级，调度器始终确保处于就绪态的最高优先级任务获得 CPU 使用权。当高优先级任务进入就绪态时，调度器会立即执行上下文切换，暂停当前运行的低优先级任务。需要注意的是，由于这种“强权”机制，&lt;strong&gt;开发者必须确保高优先级任务能通过 API（如延时或等待信号量）及时进入阻塞态释放 CPU，否则低优先级任务将因无法获得处理器时间而产生“饥饿”现象&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;以官方文档基本例子，涉及一个带有键盘、LCD 和控制算法的实时系统，来学习 FreeRTOS 的基本使用方法。我们将创建一个简单的应用程序，其中包含三个任务：一个用于读取键盘输入，一个用于更新 LCD 显示，另一个用于执行控制算法。如图所示：&lt;img alt=&#34;FreeRTOS 任务示例&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/RTExample.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;vControlTask和vKeyHandlerTask的优先级设置基于控制任务的截止时间比按键处理任务的更严格，以确保它能够及时响应系统状态的变化，同时错过截止时间对控制任务的影响后果比对按键处理任务的影响更严重。因此控制任务具有更高的优先级，以确保系统的稳定性和响应性。&lt;/p&gt;
+&lt;p&gt;当实时操作系统调度这些任务时，vControlTask 将优先于 vKeyHandlerTask 执行，以确保控制算法能够及时响应系统状态的变化。vLCDUpdateTask 的优先级设置较低，因为它主要负责更新显示，不需要像控制任务那样严格的时间要求。RTOS会自行创建一个任务，即空闲任务，当且仅当没有其他任务可运行时，空闲任务才会被调度执行。空闲任务的主要作用是保持系统的运行状态，并在没有其他任务需要执行时进行一些后台处理，例如节能模式或系统监控。因此，空闲任务的优先级设置为最低，以确保它不会干扰其他更重要的任务的执行（本例子中LCDTask被设置为最低优先级）。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -15,12 +15,5 @@
       <guid>http://localhost:1313/zh/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
       <description></description>
     </item>
-    <item>
-      <title>Freertos</title>
-      <link>http://localhost:1313/zh/tags/freertos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/zh/tags/freertos/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
