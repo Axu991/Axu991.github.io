@@ -1,31 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Xu Huang | Homepage</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Xu Huang | Homepage</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>这里写文章标题</title>
-      <link>http://localhost:1313/blogs/2026/the-first-post/</link>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2026/the-first-post/</guid>
-      <description>&lt;p&gt;这里开始写你的正文内容&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Fri, 13 Mar 2026 17:32:05 +0800</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Hello! I am &lt;strong&gt;Xu Huang&lt;/strong&gt;, a graduate student specializing in &lt;strong&gt;bio-inspired underwater robotics&lt;/strong&gt;, &lt;strong&gt;reinforcement learning for motion control&lt;/strong&gt;, and &lt;strong&gt;Sim-to-Real transfer&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Xu Huang | Homepage</title><link>https://axu991.github.io/</link><description>Recent content on Xu Huang | Homepage</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://axu991.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>这里写文章标题</title><link>https://axu991.github.io/blogs/2026/the-first-post/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><guid>https://axu991.github.io/blogs/2026/the-first-post/</guid><description>&lt;p&gt;这里开始写你的正文内容&amp;hellip;&lt;/p&gt;</description></item><item><title>About Me</title><link>https://axu991.github.io/about/</link><pubDate>Fri, 13 Mar 2026 17:32:05 +0800</pubDate><guid>https://axu991.github.io/about/</guid><description>&lt;p&gt;Hello! I am &lt;strong&gt;Xu Huang&lt;/strong&gt;, a graduate student specializing in &lt;strong&gt;bio-inspired underwater robotics&lt;/strong&gt;, &lt;strong&gt;reinforcement learning for motion control&lt;/strong&gt;, and &lt;strong&gt;Sim-to-Real transfer&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;I am passionate about building full stack robotics systems, spanning from &lt;strong&gt;mechanical design and embedded control&lt;/strong&gt; to &lt;strong&gt;intelligent algorithms&lt;/strong&gt;, with the goal of enabling robust deployment in real-world environments.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/cv_english.pdf&#34;&gt;CV right here (PDF)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://axu991.github.io/cv_english.pdf"&gt;CV right here (PDF)&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;ShanghaiTech University&lt;/strong&gt;  &lt;em&gt;2024 – 2027 (Expected)&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="education"&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;ShanghaiTech University&lt;/strong&gt; &lt;em&gt;2024 – 2027 (Expected)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;M.Sc. in &lt;strong&gt;Electronic Science and Technology&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Research Focus:
@@ -36,17 +14,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Hunan University of Science and Technology (HNUST)&lt;/strong&gt;  &lt;em&gt;2020 – 2024&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Updates &amp; News</title>
-      <link>http://localhost:1313/updates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/updates/</guid>
-      <description>&lt;div class=&#34;update-log&#34;&gt;
-&lt;p&gt;&lt;strong&gt;2026.03.14&lt;/strong&gt;  I create this wonderful portfolio and I like it!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2026.01.31&lt;/strong&gt;  Paper &amp;ldquo;Agile and Controllable Omnidirectional Fast-start Maneuvers of Robotic Fish via Bio-inspired Reinforcement Learning&amp;rdquo; accepted by ICRA 2026.&lt;/p&gt;
-&lt;/div&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;Hunan University of Science and Technology (HNUST)&lt;/strong&gt; &lt;em&gt;2020 – 2024&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Updates &amp; News</title><link>https://axu991.github.io/updates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://axu991.github.io/updates/</guid><description>&lt;div class="update-log"&gt;
+&lt;p&gt;&lt;strong&gt;2026.03.14&lt;/strong&gt; I create this wonderful portfolio and I like it!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2026.01.31&lt;/strong&gt; Paper &amp;ldquo;Agile and Controllable Omnidirectional Fast-start Maneuvers of Robotic Fish via Bio-inspired Reinforcement Learning&amp;rdquo; accepted by ICRA 2026.&lt;/p&gt;
+&lt;/div&gt;</description></item></channel></rss>

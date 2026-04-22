@@ -1,22 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>2026 on 黄旭 | 个人主页</title>
-    <link>http://localhost:1313/zh/blogs/2026/</link>
-    <description>Recent content in 2026 on 黄旭 | 个人主页</description>
-    <generator>Hugo</generator>
-    <language>zh</language>
-    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/zh/blogs/2026/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>学习freertos使用</title>
-      <link>http://localhost:1313/zh/blogs/2026/freertos_0/</link>
-      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/zh/blogs/2026/freertos_0/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;FreeRTOS 是一个开源、轻量级、确定性强的实时内核，它通过基于优先级的抢占式任务调度，在内存受限的嵌入式设备上实现高效的多任务并行管理。文档信息请参考 ——&amp;raquo; &lt;a href=&#34;https://www.freertos.org&#34;&gt;freertos.org&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026 on 黄旭 | 个人主页</title><link>https://axu991.github.io/zh/blogs/2026/</link><description>Recent content in 2026 on 黄旭 | 个人主页</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://axu991.github.io/zh/blogs/2026/index.xml" rel="self" type="application/rss+xml"/><item><title>学习freertos使用</title><link>https://axu991.github.io/zh/blogs/2026/freertos_0/</link><pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate><guid>https://axu991.github.io/zh/blogs/2026/freertos_0/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;FreeRTOS 是一个开源、轻量级、确定性强的实时内核，它通过基于优先级的抢占式任务调度，在内存受限的嵌入式设备上实现高效的多任务并行管理。文档信息请参考 ——&amp;raquo; &lt;a href="https://www.freertos.org"&gt;freertos.org&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;核心调度算法抢占式优先级&#34;&gt;核心调度算法：抢占式优先级&lt;/h3&gt;
+&lt;h3 id="核心调度算法抢占式优先级"&gt;核心调度算法：抢占式优先级&lt;/h3&gt;
 &lt;p&gt;FreeRTOS 采用&lt;strong&gt;基于优先级的抢占式调度&lt;/strong&gt;逻辑，其运作遵循以下准则：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;绝对优先&lt;/strong&gt;：调度器确保处于就绪态的&lt;strong&gt;最高优先级&lt;/strong&gt;任务始终获得 CPU 使用权。&lt;/li&gt;
@@ -24,52 +9,49 @@
 &lt;li&gt;&lt;strong&gt;开发者义务&lt;/strong&gt;：由于这种“强权”机制，开发者必须确保高优先级任务能及时调用 API（如 &lt;code&gt;vTaskDelay&lt;/code&gt; 或信号量等待）进入&lt;strong&gt;阻塞态&lt;/strong&gt;释放 CPU，否则将导致低优先级任务&lt;strong&gt;饥饿&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;实时系统任务布局实例&#34;&gt;实时系统任务布局实例&lt;/h3&gt;
+&lt;h3 id="实时系统任务布局实例"&gt;实时系统任务布局实例&lt;/h3&gt;
 &lt;p&gt;根据任务的&lt;strong&gt;实时性（Deadline）&lt;strong&gt;与&lt;/strong&gt;后果严重性&lt;/strong&gt;分配优先级：&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;任务名称&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;优先级&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;职责描述&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;分配逻辑&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;vControlTask&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;最高&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;执行控制算法&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;截止时间最严苛，关系系统稳定，必须优先响应。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;vKeyHandlerTask&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;中等&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;键盘输入处理&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;响应用户交互，实时性要求次于控制任务。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;vLCDUpdateTask&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;最低&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;更新显示/后台&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;刷新频率低，允许在系统空闲时异步执行。&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Idle Task&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;0 (最低)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;系统维护/省电&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;内核自动创建，仅在无其他任务运行态时执行。&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;任务名称&lt;/th&gt;
+&lt;th style="text-align: left"&gt;优先级&lt;/th&gt;
+&lt;th style="text-align: left"&gt;职责描述&lt;/th&gt;
+&lt;th style="text-align: left"&gt;分配逻辑&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;vControlTask&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;最高&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;执行控制算法&lt;/td&gt;
+&lt;td style="text-align: left"&gt;截止时间最严苛，关系系统稳定，必须优先响应。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;vKeyHandlerTask&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;中等&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;键盘输入处理&lt;/td&gt;
+&lt;td style="text-align: left"&gt;响应用户交互，实时性要求次于控制任务。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;vLCDUpdateTask&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;最低&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;更新显示/后台&lt;/td&gt;
+&lt;td style="text-align: left"&gt;刷新频率低，允许在系统空闲时异步执行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Idle Task&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;0 (最低)&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;系统维护/省电&lt;/td&gt;
+&lt;td style="text-align: left"&gt;内核自动创建，仅在无其他任务运行态时执行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;上下文切换原理&#34;&gt;上下文切换原理&lt;/h3&gt;
+&lt;h3 id="上下文切换原理"&gt;上下文切换原理&lt;/h3&gt;
 &lt;p&gt;任务对调度器的存在是“无感知”的，其执行的连续性通过&lt;strong&gt;私有堆栈&lt;/strong&gt;实现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;环境保存（换出）&lt;/strong&gt;：任务被切出时，当前 CPU 的寄存器状态（PC、SP 等）会被压入该任务的&lt;strong&gt;私有堆栈&lt;/strong&gt;中。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;环境恢复（换入）&lt;/strong&gt;：任务重新获得执行权时，调度器从其堆栈中弹出保存的现场信息，精确还原到被中断的一瞬。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;独立性&lt;/strong&gt;：每个任务通过专属堆栈维持自身的逻辑完整性。&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>
