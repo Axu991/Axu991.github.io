@@ -1,0 +1,203 @@
+/* ==========================================================================
+   1. 核心配色与变量 (PaperMod 规范对齐)
+   ========================================================================== */
+
+:root {
+    --color-primary: #1d1d1f;        /* 标题色 */
+    --color-text-main: #242424;     /* 正文色 */
+    --color-text-muted: #86868b;    /* 辅助色 */
+    --color-border: #eeeeee;
+    --color-link: #000000;          /* 纯黑链接 */
+    --color-link-hover: #0e5ab6;    /* 悬停琉璃蓝 */
+    --color-hover-bg: rgba(53, 114, 176, 0.06);
+
+    --theme: #ffffff;
+    --entry: #ffffff;
+    --primary: var(--color-primary);
+    --secondary: var(--color-text-muted);
+    --tertiary: #f5f5f7;
+    --content: var(--color-text-main);
+    --code-bg: #f5f5f7;
+    --border: var(--color-border);
+    --main-width: 820px;
+}
+
+.dark {
+    --color-primary: #f5f5f7;
+    --color-text-main: #d2d2d7;
+    --color-text-muted: #86868b;
+    --color-border: #333336;
+    --color-link: #79adc8;          /* 冰川蓝链接 */
+    --color-link-hover: #a6d1e6;
+    --color-hover-bg: rgba(255, 255, 255, 0.05);
+
+    --theme: #1c1c1e;
+    --entry: #2c2c2e;
+    --primary: var(--color-primary);
+    --secondary: var(--color-text-muted);
+    --tertiary: #3a3a3c;
+    --content: var(--color-text-main);
+    --code-bg: #2c2c2e;
+    --border: var(--color-border);
+}
+
+/* ==========================================================================
+   2. 导航栏强效修复 (解决多语言分两层、样式不统一问题)
+   ========================================================================== */
+
+/* 强制 Header 内部元素横向排列，禁止换行 */
+.nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 10px 0 !important;
+}
+
+/* 网站 Logo 区域 */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 20px !important;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary);
+    text-decoration: none !important;
+}
+
+/* 菜单容器：强制水平，取消列表样式 */
+#menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* 菜单链接样式 */
+#menu a {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    color: var(--primary);
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+#menu a:hover {
+    background: var(--color-hover-bg);
+    color: var(--color-link-hover) !important;
+}
+
+/* 语言切换器样式对齐 */
+.language-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+/* 隐藏可能干扰布局的面包屑 */
+.breadcrumbs {
+    display: none !important;
+}
+
+/* ==========================================================================
+   3. 全局排版与交互 (About, Blogs, Projects)
+   ========================================================================== */
+
+/* 统一链接无下划线 */
+a, .post-content a {
+    text-decoration: none !important;
+}
+
+/* 正文排版 */
+.post-content {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.post-content h2 {
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+}
+
+/* About 页面：左标题、右日期 (利用 flex 布局) */
+.post-content p:has(strong + em) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+}
+
+.post-content p em:last-child {
+    color: var(--secondary);
+    font-style: normal;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+}
+
+/* 项目卡片效果 */
+.project-card {
+    border: 1px solid var(--border);
+    background: var(--entry);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-link-hover);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.post-content img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. 响应式布局优化 (适配移动端)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column !important; /* 手机端允许换行 */
+        align-items: flex-start !important;
+    }
+    
+    #menu {
+        margin-top: 10px !important;
+        flex-wrap: wrap !important;
+    }
+
+    #menu a {
+        margin: 5px 5px 5px 0;
+        padding: 4px 8px;
+    }
+
+    .post-content p:has(strong + em) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-content p em:last-child {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}

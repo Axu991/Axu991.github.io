@@ -1,0 +1,63 @@
+====================================================================
+               HUGO FRONT MATTER 终极词典 (Full List)
+====================================================================
+
+[ 1. 基础信息 ]
+title:              # 文章标题 (必填)
+date: 2026-03-16    # 发布日期 (YYYY-MM-DD)
+lastmod: 2026-03-16 # 最近修改日期 (通常自动生成)
+draft: false        # 是否草稿 (true=隐藏, false=发布)
+publishDate:        # 预设发布日期 (若日期未到则不显示)
+expiryDate:         # 过期日期 (过期后自动隐藏)
+slug:               # URL 自定义短名称 (例如: /posts/hello)
+url:                # 强制覆盖完整 URL 路径
+weight: 1           # 排序权重 (数字越小，在列表越靠前/置顶)
+
+[ 2. 分类与标签 (Taxonomy) ]
+tags: ["A", "B"]    # 标签 (用于分类文章)
+categories: ["A"]   # 大类 (用于归档)
+series: ["系列名"]  # 系列 (将多篇文章关联在一起)
+
+[ 3. PaperMod 主题特色控制 (UI & Components) ]
+showDate: true           # 是否显示日期
+showReadingTime: true    # 是否显示“X min”阅读时间
+showToc: true            # 是否显示文章目录
+TocOpen: true            # 目录是否默认展开
+hidemeta: false          # 隐藏所有元数据 (作者、日期、字数等)
+comments: true           # 是否开启评论插件
+description: ""          # SEO 描述 (也会显示在列表页的卡片下方)
+canonicalURL: ""         # 原文地址 (用于防爬虫/SEO)
+disableAnchors: false    # 禁用标题的锚点链接
+math: true               # 开启 LaTeX 数学公式渲染
+searchHidden: false      # 在搜索结果中隐藏此文章
+
+[ 4. 封面与社交媒体 (Media & OpenGraph) ]
+cover:
+    image: ""            # 封面图片路径 (例如: "img/fish.png")
+    alt: ""              # 图片加载失败时的描述
+    caption: ""          # 图片下方的文字说明
+    relative: true       # 使用相对路径 (推荐)
+    hidden: false        # 是否在文章页隐藏封面图
+    hiddenInList: false  # 是否在列表页隐藏封面图
+
+[ 5. 内容处理 (Content Behavior) ]
+summary: ""              # 手动指定列表页显示的摘要 (覆盖自动生成的)
+disableShare: false      # 禁用文章下方的分享按钮
+disableSpecial1stPost: false # 禁用文章第一段的特殊样式
+type: "post"             # 强制指定渲染类型 (通常不填)
+layout: "single"         # 强制指定渲染模板 (通常不填)
+
+====================================================================
+        💡 编写 YAML 的 4 个核心铁律
+====================================================================
+1. 冒号之后，必须跟一个空格。 (正确: title: "Hello")
+2. 布尔值不用引号，直接写 true 或 false。 (正确: draft: false)
+3. 数组格式必须用 [ ] 且内部用英文逗号分隔。 (正确: tags: ["Tech", "Life"])
+4. 所有的 FRONT MATTER 必须被夹在 --- (三个减号) 之间。
+
+====================================================================
+        🚀 进阶技巧：时间占位符 (配合 Archetypes 使用)
+====================================================================
+- {{ .Date }}              # 自动插入当前创建时间
+- {{ .Name }}              # 自动获取文件名作为标题
+- {{ .Date.Format "2006" }}# 获取年份 (如: 2026)
