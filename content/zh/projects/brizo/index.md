@@ -3,92 +3,75 @@ title: "仿生机器鱼平台—梭影（Brizo）"
 date: 2026-05-11
 description: "Brizo 是一个具备敏捷运动能力的仿生机器鱼平台，适用于科研和环境监测等多种应用场景，身长0.5米，可用2.4GHz无线控制和915MHz无线通信，巡航速度为0.5米/秒，常态运动续航时间约1小时。"
 cover:
-    image: "cover.jpg" # 封面图片路径，建议放在同文件夹下
+    image: "cover.jpg"
     alt: "项目封面图"
-    caption: "模型与实物展示" # 封面下的说明文字
-    relative: true # 必须为 true 才能读取同文件夹下的图片
-    hidden: false  # 设为 false，详情页顶部也会显示封面
-# 标签与分类
-
-tags: ["视频编辑", "交互设计", "Python"]
+    caption: "模型与实物展示"
+    relative: true
+    hidden: false
+tags: ["仿生机器鱼", "嵌入式系统", "运动控制"]
 categories: ["Projects"]
-# 增加外部链接按钮
 editPost:
-    URL: "https://github.com/Axu991" # 比如你的 GitHub 或 Demo 地址
-    Text: "GitHub"
+    URL: "https://github.com/Axu991"
+    Text: "GitHub：Brizo"
 ---
 
 ## 项目简介
-Brizo 是一个仿生机器鱼平台，其设计灵感来源于自然界中的梭鱼，我完成了从概念设计到原型制作的全过程，通过模仿其流线型结构和游动方式，实现了卓越的机动性和稳定性。该平台不仅适用于科学研究，还可应用于环境监测、水下探测和娱乐等领域。
 
-> **技术栈：** `SolidWorks` / `3D打印` / `防水设计` / `嘉立创EDA` / `ESP32`/ `Arduino` / `CAN总线` / `C language`
+受自然界梭鱼的流线型体态与高效游动方式启发，我设计并制作了仿生机器鱼平台 Brizo。从概念草图到可运行原型，我独立完成了全过程开发。该平台长 0.5 米，集机械结构、嵌入式硬件与运动控制算法，为仿生推进与自主运动能力验证提供了完整的科研实验平台。
+
+- **机械与建模**：基于 SolidWorks 完成多关节仿生结构及流线型外形设计，构建 URDF 模型用于仿真对齐；采用静密封技术实现整机 IP68 级防水，支持舱内系统在动态负载下连续稳定运行 ≥1 小时。
+
+- **嵌入式与硬件开发**：以 ESP32-S3 为主控，完成原理图与 PCB 设计，构建电源分配、通信接口及执行器控制电路。系统采用 8.4V 航模锂电池供电，结合 DC-DC 稳压模块形成稳定供电链路。基于 CAN（TWAI）通信网络实现多路 CAN 舵机统一控制，集成 IMU 获取实时状态。设计 915MHz（CRSF）远程控制链路与 WiFi（AsyncUDP）调试链路，实现控制与调试解耦及多链路并行通信。在系统集成中完成接口匹配、通信协同与任务调度，实现 50Hz 稳定运动控制，系统可在实验室与户外水域环境下切换可靠运行。
+
+- **运动控制算法**：设计基于中央模式发生器（CPG）的多关节协同推进算法，通过参数辨识优化推进效率，使巡航速度达到 0.5 m/s，并完成算法的离线部署。结合 CFD 流体仿真器，开展深度强化学习控制策略训练，以及仿真到实机的迁移方法（Sim2Real）验证。
+
+> **技术栈：** `SolidWorks` / `3D打印` / `IP68防水` / `嘉立创EDA` / `ESP32-S3` / `CAN(TWAI)` / `CPG算法` / `深度强化学习` / `Sim2Real`
+
 ---
 
 ## 视频演示
+
 分别展示了 Brizo 在户外环境和实验环境中的表现，可以更直观地了解 Brizo 的运动能力和交互体验。
 
-<div style="
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; 
-    margin: 20px 0;
-">
-  <!-- 第一个视频 -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
   <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff;">
-    <video width="100%" controls poster="cover1.jpg">
+    <video width="100%" controls>
       <source src="demo_outside.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo户外环境演示</p>
   </div>
-
-  <!-- 第二个视频 -->
   <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff;">
-    <video width="100%" controls poster="cover2.jpg">
+    <video width="100%" controls>
       <source src="demo_inside.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo实验环境演示</p>
   </div>
-</div>
-
-  <!-- 第三个视频 -->
   <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff;">
-    <video width="100%" controls poster="cover3.jpg">
+    <video width="100%" controls>
       <source src="demo_interact.mp4" type="video/mp4">
     </video>
-    <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo交互体验演示</p>
+    <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo与鱼群</p>
+  </div>
+  <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff;">
+    <video width="100%" controls>
+      <source src="demo_cross.mp4" type="video/mp4">
+    </video>
+    <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo交叉演示</p>
   </div>
 </div>
 
 ---
 
-## 户外环境细节展示
-利用网格布局展示多张图片，避免页面拉得太长。
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; margin: 20px 0;">
-  <img src="detail-1.jpg" style="border-radius: 8px; width: 100%;" alt="细节图1">
-  <img src="detail-2.jpg" style="border-radius: 8px; width: 100%;" alt="细节图2">
-  <img src="detail-3.jpg" style="border-radius: 8px; width: 100%;" alt="细节图3">
-  <img src="detail-4.jpg" style="border-radius: 8px; width: 100%;" alt="细节图4">
-</div>
+## 设计与制作细节
 
 ---
 
 ## 核心功能
-*   **功能点一：** 描述你的第一个亮点。
-*   **功能点二：** 描述你的第二个亮点。
-*   **交互体验：** 解释视频中展示的交互逻辑。
 
----
+- **多关节仿生推进**：基于CPG算法实现类鱼体波动，巡航速度达0.5 m/s，机动性与隐蔽性优于传统螺旋桨推进。
 
-## 如何运行 (可选)
-如果你希望别人也能跑你的 Demo，可以放一段代码：
+- **通信链路**：915MHz远程控制与WiFi调试链路并行，支持户外远程操控与室内实时调参，以50Hz频率运动控制。
 
-```bash
-# 克隆仓库
-git clone [https://github.com/user/repo.git](https://github.com/user/repo.git)
+- **IP68级防水**：静密封技术配合模块化舱体设计，连续运行≥1小时。
 
-# 安装依赖
-pip install -r requirements.txt
-
-# 运行
-python main.py
+- **Sim2Real算法迁移**：基于CFD仿真环境训练深度强化学习策略，实现仿真到实机的强化学习策略部署。
