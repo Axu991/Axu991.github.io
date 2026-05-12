@@ -21,7 +21,7 @@ editPost:
 ## 项目简介
 Brizo 是一个仿生机器鱼平台，其设计灵感来源于自然界中的梭鱼，我完成了从概念设计到原型制作的全过程，通过模仿其流线型结构和游动方式，实现了卓越的机动性和稳定性。该平台不仅适用于科学研究，还可应用于环境监测、水下探测和娱乐等领域。
 
-> **技术栈：** `SolidWorks` / `3D打印` / `防水设计` / `ESP32`/ `Arduino` / `CAN总线` / `C language`
+> **技术栈：** `SolidWorks` / `3D打印` / `防水设计` / `嘉立创EDA` / `ESP32`/ `Arduino` / `CAN总线` / `C language`
 ---
 
 ## 视频演示
@@ -47,6 +47,15 @@ Brizo 是一个仿生机器鱼平台，其设计灵感来源于自然界中的�
       <source src="demo_inside.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo实验环境演示</p>
+  </div>
+</div>
+
+  <!-- 第三个视频 -->
+  <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff;">
+    <video width="100%" controls poster="cover3.jpg">
+      <source src="demo_interact.mp4" type="video/mp4">
+    </video>
+    <p style="text-align: center; font-size: 14px; color: #666; margin: 8px 0;">Brizo交互体验演示</p>
   </div>
 </div>
 
