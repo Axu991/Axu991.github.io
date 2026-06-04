@@ -4,7 +4,7 @@ date: 2024-09-01
 # weight: 1
 description: "This project introduces BASS, an innovative data-driven control framework that breaks free from the periodic constraints of traditional CPGs. By coupling a high-fidelity CFD environment with a biological two-stage reward mechanism, we achieve non-periodic, high-burst omnidirectional fast-start maneuvers on a multi-joint robotic fish, successfully bridging the Sim2Real gap in transient fluid dynamics."
 cover:
-    image: "cover.jpg"
+    image: "cover.png"
     alt: "ICRA 2026 Paper Poster and Core Architecture"
     caption: "Deep Reinforcement Learning (DRL) control architecture embedded with biological two-stage characteristics"
     relative: true

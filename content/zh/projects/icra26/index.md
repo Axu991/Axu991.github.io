@@ -4,7 +4,7 @@ date: 2024-09-01
 # weight: 1
 description: "本文提出了一种创新的数据驱动控制框架，打破了传统 CPG 的周期性束缚。通过结合高保真 CFD 仿真与生物学两阶段奖励机制，在自研机器鱼 Brizo 上实现了非周期、高爆发的全向快速启动机动，成功跨越瞬态流体动力学系统的 Sim2Real 鸿沟。"
 cover:
-    image: "cover.jpg"
+    image: "cover.png"
     alt: "ICRA 2026 论文海报及核心架构"
     caption: "ICRA 2026 论文海报及核心架构"
     relative: true
