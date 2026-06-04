@@ -16,6 +16,8 @@ editPost:
     Text: "GitHub Project"
 ---
 
+[Download Research Poster (High-Resolution PDF)](/Poster.pdf)
+
 ## Project Overview
 
 In nature, fish employ high-acceleration, explosive **fast-start** maneuvers—typically executing a primary body bend within several milliseconds and an expansive release within tens of milliseconds—to escape predators or strike prey. However, conventional control paradigms struggle to reproduce these high-burst, non-periodic, and omnidirectional agile trajectories due to the rigid phase constraints of synchronized gaits.
