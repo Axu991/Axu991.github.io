@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>仿生机器鱼 on Xu Huang | Homepage</title>
+    <link>http://localhost:1313/tags/%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E9%B1%BC/</link>
+    <description>Recent content in 仿生机器鱼 on Xu Huang | Homepage</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E9%B1%BC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于生物启发强化学习的仿生机器鱼全向快速启动与敏捷机动控制</title>
+      <link>http://localhost:1313/projects/icra26/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/icra26/</guid>
+      <description>本文提出了一种创新的数据驱动控制框架，打破了传统 CPG 的周期性束缚。通过结合高保真 CFD 仿真与生物学两阶段奖励机制，在自研机器鱼 Brizo 上实现了非周期、高爆发的全向快速启动机动，成功跨越瞬态流体动力学系统的 Sim2Real 鸿沟。</description>
+    </item>
+  </channel>
+</rss>
