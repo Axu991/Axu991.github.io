@@ -1,10 +1,12 @@
 ---
-title: "Updates & News"
+title: "Updates"
 layout: "page"
 slug: "updates"
 ---
 
 <div class="update-log">
+
+**2026.06.01**  ICRA 2026 presentation poster and video demonstration added to the project page.
 
 **2026.03.14**  I create this wonderful portfolio and I like it!
 
