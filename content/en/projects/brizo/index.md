@@ -12,7 +12,7 @@ tags: ["Bionic Robotics", "Embedded Systems", "Motion Control"]
 categories: ["Projects"]
 editPost:
     URL: "https://github.com/Axu991/robotic-fish"
-    Text: "GitHub: Brizo"
+    Text: "GitHub: Brizo-firmware"
 ---
 
 ## Project Introduction
