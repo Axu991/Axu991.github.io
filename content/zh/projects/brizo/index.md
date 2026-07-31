@@ -12,7 +12,7 @@ cover:
 tags: ["仿生机器鱼", "嵌入式系统", "运动控制"]
 categories: ["Projects"]
 editPost:
-    URL: "https://github.com/Axu991"
+    URL: "https://github.com/Axu991/robotic-fish"
     Text: "GitHub：Brizo"
 ---
 
