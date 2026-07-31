@@ -1,7 +1,7 @@
 baseURL = 'https://axu991.github.io/'
 theme = 'PaperMod'
 relativeURLs = false
-publishDir = "docs"
+publishDir = "public"
 
 
 defaultContentLanguage = "en"
