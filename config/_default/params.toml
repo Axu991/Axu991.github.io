@@ -16,6 +16,7 @@ highlightCurrentMenuArea = true
 
 [article]
   showTableOfContents = true
+  showAuthor = false
 
 [homepage]
   layout = "profile"

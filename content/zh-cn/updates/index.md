@@ -3,6 +3,8 @@ title: "动态"
 layout: "page"
 showToc: false
 slug: "updates"
+date: 2026-10-27
+type: "updates"
 ---
 
 <div class="update-log">

@@ -2,7 +2,7 @@ locale = "en"
 contentDir = "content/en"
 label = "English"
 weight = 1
-title = "Xu Huang | Homepage"
+title = "Xu Huang"
 
 [params]
   displayName = "English"

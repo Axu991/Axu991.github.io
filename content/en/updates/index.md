@@ -2,6 +2,8 @@
 title: "Updates"
 layout: "page"
 slug: "updates"
+date: 2026-10-27
+type: "updates"
 ---
 
 <div class="update-log">

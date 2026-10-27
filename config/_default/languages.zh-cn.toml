@@ -2,7 +2,7 @@ locale = "zh-cn"
 contentDir = "content/zh-cn"
 label = "简体中文"
 weight = 2
-title = "黄旭 | 个人主页"
+title = "黄旭"
 
 [params]
   displayName = "简体中文"
