@@ -8,6 +8,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.10.27**  Published a research note: *Acoustic Communication & Positioning for Untethered Underwater Robots*.
+
 **2026.10.27**  Migrated the site from PaperMod to Blowfish theme, with redesigned typography, subtle mouse-interaction particles, live clock, and improved bilingual layout.
 
 **2026.10.26**  Integrated an AI assistant to help maintain this homepage.
