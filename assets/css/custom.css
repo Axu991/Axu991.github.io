@@ -208,17 +208,20 @@ footer#footer {
 }
 
 /* Menu pills in header */
-header nav a {
-  transition: all 0.2s ease;
+header nav a, .main-menu nav a {
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   border-radius: 9999px;
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.9rem;
 }
-header nav a:hover {
+header nav a:hover, .main-menu nav a:hover {
   background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
 }
 
 /* Active nav item */
-header nav a[aria-current="page"] {
+header nav a[aria-current="page"],
+header nav a.font-medium {
   background: rgba(0, 0, 0, 0.06);
   font-weight: 600;
 }
@@ -328,8 +331,10 @@ html[data-appearance="dark"] .prose blockquote {
   background: rgba(255, 255, 255, 0.04);
 }
 
-html[data-appearance="dark"] header nav a:hover {
+html[data-appearance="dark"] header nav a:hover,
+html[data-appearance="dark"] .main-menu nav a:hover {
   background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 html[data-appearance="dark"] header nav a[aria-current="page"] {
