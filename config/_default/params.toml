@@ -14,6 +14,9 @@ mainSections = ["projects", "blogs"]
 smartTOC = true
 highlightCurrentMenuArea = true
 
+[article]
+  showTableOfContents = true
+
 [homepage]
   layout = "profile"
   showRecent = true

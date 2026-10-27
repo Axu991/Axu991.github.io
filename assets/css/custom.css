@@ -1,0 +1,72 @@
+/* Apple-style typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Header title bigger */
+header .font-medium, header .text-sm {
+  font-size: 1.05rem !important;
+}
+
+/* Big hero name */
+.home h1, .profile h1 {
+  font-size: 3.5rem !important;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.home h2, .profile h2 {
+  font-size: 1.4rem !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #666;
+}
+
+/* Section titles */
+h2 {
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Card titles */
+article.card h3, .cards h3 {
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Body text */
+p, li {
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Card hover */
+article.card, .cards article {
+  border-radius: 16px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+}
+article.card:hover, .cards article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Social icons */
+.author-links a {
+  transition: transform 0.2s ease;
+}
+.author-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* Top clock */
+#top-clock {
+  font-size: 0.95rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+  margin-right: 1rem;
+}

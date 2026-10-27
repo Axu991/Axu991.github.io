@@ -1,0 +1,89 @@
+<!-- Mouse trail particles + top clock -->
+<canvas id="trail-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;"></canvas>
+
+<!-- Subtle animated gradient background -->
+<div id="bg-aurora" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 10%, rgba(59,130,246,0.06), transparent),
+    radial-gradient(ellipse 700px 500px at 80% 90%, rgba(139,92,246,0.05), transparent);
+  animation: aurora 20s ease-in-out infinite alternate;"></div>
+<style>
+@keyframes aurora {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 20px) scale(1.05); }
+  100% { transform: translate(-20px, 30px) scale(1.02); }
+}
+#top-clock {
+  font-size: 0.85rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+  margin-right: 1rem;
+  letter-spacing: 0.02em;
+}
+</style>
+
+<script>
+// Particle trail
+(function() {
+  const canvas = document.getElementById('trail-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const particles = []; const MAX = 60;
+  class P {
+    constructor(x, y) {
+      this.x = x + (Math.random()-0.5)*10; this.y = y + (Math.random()-0.5)*10;
+      this.vx = (Math.random()-0.5)*1.5; this.vy = Math.random()*0.5;
+      this.gravity = 0.15; this.life = 1;
+      this.decay = 0.008 + Math.random()*0.008;
+      this.r = 2 + Math.random()*3;
+      this.color = Math.random() > 0.5 ? '59,130,246' : '139,92,246';
+    }
+    update() { this.vy += this.gravity; this.x += this.vx; this.y += this.vy; this.vx *= 0.99; this.life -= this.decay; }
+    draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = `rgba(${this.color},${this.life*0.5})`; ctx.fill(); }
+  }
+  let last = 0;
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now(); if (now - last < 30) return; last = now;
+    if (particles.length < MAX) particles.push(new P(e.clientX, e.clientY));
+  });
+  (function loop() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = particles.length-1; i >= 0; i--) {
+      const p = particles[i]; p.update(); p.draw();
+      if (p.life <= 0 || p.y > H+50) particles.splice(i, 1);
+    }
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// Clock in header - insert before language switcher
+(function() {
+  function tick() {
+    const el = document.getElementById('top-clock');
+    if (!el) return;
+    const now = new Date();
+    const h = now.getHours().toString().padStart(2,'0');
+    const m = now.getMinutes().toString().padStart(2,'0');
+    el.textContent = `${h}:${m}`;
+  }
+  function init() {
+    const translation = document.querySelector('nav .translation');
+    if (translation && !document.getElementById('top-clock')) {
+      const clock = document.createElement('span');
+      clock.id = 'top-clock';
+      clock.textContent = '--:--';
+      translation.parentNode.insertBefore(clock, translation);
+      setInterval(tick, 1000); tick();
+    } else {
+      requestAnimationFrame(init);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
