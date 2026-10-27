@@ -1,0 +1,24 @@
+locale = "en"
+contentDir = "content/en"
+label = "English"
+weight = 1
+title = "Xu Huang | Homepage"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Xu Huang — Bio-inspired underwater robotics, embedded systems, and reinforcement learning."
+
+[params.author]
+  name = "Xu Huang"
+  email = "huangxu2024@shanghaitech.edu.cn"
+  headline = "Bio-inspired Robotic Fish | Embedded Development | RL"
+  bio = "Graduate student at ShanghaiTech University working on underwater robotics, embedded systems, and reinforcement learning."
+  links = [
+    { github = "https://github.com/Axu991" },
+    { bilibili = "https://space.bilibili.com/23822195" },
+    { xiaohongshu = "https://www.xiaohongshu.com/user/profile/62fce08e000000000f00737d" },
+    { email = "mailto:huangxu2024@shanghaitech.edu.cn" },
+  ]

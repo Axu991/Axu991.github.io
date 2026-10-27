@@ -18,8 +18,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
-          extended: true # 关键：PaperMod 需要 Hugo Extended 版本
+          hugo-version: '0.168.0'
+          extended: true
 
       - name: Build
         run: hugo --minify

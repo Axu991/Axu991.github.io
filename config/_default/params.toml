@@ -1,0 +1,24 @@
+# -- Theme Options --
+# Docs: https://blowfish.page/docs/configuration/#theme-parameters
+
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+enableA11y = false
+
+mainSections = ["projects", "blogs"]
+
+smartTOC = true
+highlightCurrentMenuArea = true
+
+[homepage]
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 4
+  showMoreLink = true
+  showMoreLinkDest = "/projects/"
+  cardView = true
+  cardViewScreenWidth = false

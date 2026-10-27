@@ -1,0 +1,24 @@
+locale = "zh-cn"
+contentDir = "content/zh-cn"
+label = "简体中文"
+weight = 2
+title = "黄旭 | 个人主页"
+
+[params]
+  displayName = "简体中文"
+  isoCode = "zh-cn"
+  rtl = false
+  dateFormat = "2006-01-02"
+  description = "黄旭 — 仿生水下机器人、嵌入式开发与强化学习。"
+
+[params.author]
+  name = "黄旭"
+  email = "huangxu2024@shanghaitech.edu.cn"
+  headline = "仿生机器鱼 | 嵌入式开发 | 强化学习"
+  bio = "上海科技大学研究生，研究方向为水下机器人、嵌入式系统与强化学习。"
+  links = [
+    { github = "https://github.com/Axu991" },
+    { bilibili = "https://space.bilibili.com/23822195" },
+    { xiaohongshu = "https://www.xiaohongshu.com/user/profile/62fce08e000000000f00737d" },
+    { email = "mailto:huangxu2024@shanghaitech.edu.cn" },
+  ]

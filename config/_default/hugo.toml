@@ -1,0 +1,29 @@
+# -- Site Configuration --
+# Docs: https://blowfish.page/docs/configuration/
+
+baseURL = "https://axu991.github.io/"
+theme = "blowfish"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+hasCJKLanguage = true
+enableEmoji = true
+summaryLength = 30
+
+buildDrafts = false
+buildFuture = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
