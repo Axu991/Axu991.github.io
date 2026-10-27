@@ -6,6 +6,8 @@ slug: "updates"
 
 <div class="update-log">
 
+**2026.10.27**  Migrated the site from PaperMod to Blowfish theme, with redesigned typography, subtle mouse-interaction particles, live clock, and improved bilingual layout.
+
 **2026.10.26**  Integrated an AI assistant to help maintain this homepage.
 
 **2026.06.06**  Participated in the project "Haiyi Lingkun" Bionic Fish for Eco-friendly Monitoring in Reef Environments: Empowering Smart Agriculture and Ecological Restoration with Innovation, and won the first prize in the 15th "Challenge Cup" Shanghai University Student Entrepreneurship Competition！
