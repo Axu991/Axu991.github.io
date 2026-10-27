@@ -344,3 +344,39 @@ html[data-appearance="dark"] header nav a[aria-current="page"] {
 html[data-appearance="dark"] ::selection {
   background: rgba(99, 179, 237, 0.3);
 }
+
+/* ===== Horizontal tab cards: side by side, hover lifts up ===== */
+h2 + section.w-full.grid {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+  align-items: stretch !important;
+  max-width: 1000px !important;
+  margin: 2rem auto !important;
+  padding: 0 1rem;
+}
+
+h2 + section.w-full.grid > article {
+  position: relative !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+  transform: translateY(40px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease !important;
+  cursor: pointer;
+}
+
+/* Hover: lift the card up */
+h2 + section.w-full.grid > article:hover {
+  transform: translateY(-20px) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15) !important;
+  z-index: 10 !important;
+}
+
+/* Center the Recent heading */
+main h2.mt-8 {
+  text-align: center;
+}
