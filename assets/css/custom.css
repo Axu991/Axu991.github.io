@@ -95,3 +95,247 @@ nav#TableOfContents a:hover, nav#TableOfContents a.active {
   font-variant-numeric: tabular-nums;
   margin-right: 1rem;
 }
+
+/* ===== Liquid Glass (Apple-style) ===== */
+
+/* Frosted glass top navigation */
+header#header, .sticky.top-0 {
+  background: rgba(255, 255, 255, 0.68) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Glass cards — with rim light & subtle gradient border */
+article.card, .cards article {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03),
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 8px 28px rgba(0, 0, 0, 0.05);
+}
+
+article.card:hover, .cards article:hover {
+  background: rgba(255, 255, 255, 0.78) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.03),
+    0 20px 48px rgba(0, 0, 0, 0.09);
+}
+
+/* TOC as floating glass panel with rim light */
+#TableOfContents {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Pills / buttons */
+button, .btn, [role="search"] {
+  border-radius: 9999px;
+}
+
+/* Search chip glass */
+#search, .search-panel {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Images rounded */
+.prose img, article img {
+  border-radius: 14px;
+}
+
+/* Code blocks glass */
+.prose pre {
+  background: rgba(245, 245, 247, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 16px rgba(0,0,0,0.04);
+  border-radius: 14px;
+}
+
+/* Table glass */
+.prose table {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Blockquote glass */
+.prose blockquote {
+  background: rgba(245, 245, 247, 0.4);
+  backdrop-filter: blur(10px);
+  border-left: 3px solid #2563eb;
+  border-radius: 0 12px 12px 0;
+}
+
+/* ===== Site-wide glass polish ===== */
+
+/* Footer */
+footer#footer {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Author / profile card on homepage */
+.author, .profile, .author-card {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+/* Menu pills in header */
+header nav a {
+  transition: all 0.2s ease;
+  border-radius: 9999px;
+  padding: 0.3rem 0.8rem;
+}
+header nav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Active nav item */
+header nav a[aria-current="page"] {
+  background: rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
+
+/* Social icons glass pills */
+.author-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.05);
+  margin: 0 0.35rem;
+}
+.author-links a:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Update log entries */
+.update-log p, .update-log strong {
+  line-height: 1.9;
+}
+
+/* General links */
+.prose a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.25s ease;
+}
+.prose a:hover {
+  background-size: 100% 1px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+/* ===== Dark mode glass ===== */
+
+html[data-appearance="dark"] header#header,
+html[data-appearance="dark"] .sticky.top-0 {
+  background: rgba(18, 18, 22, 0.6) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-appearance="dark"] article.card,
+html[data-appearance="dark"] .cards article {
+  background: rgba(30, 30, 36, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+html[data-appearance="dark"] article.card:hover,
+html[data-appearance="dark"] .cards article:hover {
+  background: rgba(40, 40, 48, 0.6) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+html[data-appearance="dark"] #TableOfContents {
+  background: rgba(30, 30, 36, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.3);
+}
+
+html[data-appearance="dark"] .author-links a {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+html[data-appearance="dark"] .author-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+html[data-appearance="dark"] footer#footer {
+  background: rgba(18, 18, 22, 0.6) !important;
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+html[data-appearance="dark"] .prose pre {
+  background: rgba(40, 40, 48, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+html[data-appearance="dark"] .prose blockquote {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html[data-appearance="dark"] header nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+html[data-appearance="dark"] header nav a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-appearance="dark"] ::selection {
+  background: rgba(99, 179, 237, 0.3);
+}
