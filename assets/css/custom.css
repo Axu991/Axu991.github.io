@@ -376,6 +376,23 @@ h2 + section.w-full.grid > article:hover {
   z-index: 10 !important;
 }
 
+/* Mobile: stack cards vertically, remove offset */
+@media (max-width: 768px) {
+  h2 + section.w-full.grid {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    padding: 0 0.5rem !important;
+  }
+  h2 + section.w-full.grid > article {
+    transform: none !important;
+    width: 100% !important;
+    flex: none !important;
+  }
+  h2 + section.w-full.grid > article:hover {
+    transform: none !important;
+  }
+}
+
 /* Center the Recent heading */
 main h2.mt-8 {
   text-align: center;
