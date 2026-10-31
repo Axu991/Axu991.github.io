@@ -8,6 +8,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.10.31**  Published *Underwater Acoustic Communication: An Introductory Guide to Modulation*.
+
 **2026.10.30**  Published *Fundamentals of Acoustics: An Introductory Guide*.
 
 **2026.10.28**  Published *FreeRTOS: A Practical Introduction to Real-Time Task Scheduling* and *Underwater Robot Hull Form Survey: A Decade of Progress*.
