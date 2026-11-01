@@ -8,6 +8,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.11.01**  Published *Underwater Acoustic Positioning: Principles, Methods, and Systems*.
+
 **2026.10.31**  Published *Underwater Acoustic Communication: An Introductory Guide to Modulation*.
 
 **2026.10.30**  Published *Fundamentals of Acoustics: An Introductory Guide*.
