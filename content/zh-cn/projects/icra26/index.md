@@ -10,7 +10,7 @@ cover:
     relative: true
     hidden: false
 tags: ["仿生机器鱼", "深度强化学习", "ICRA 2026"]
-categories: ["Projects， Publications"]
+categories: ["Projects", "Publications"]
 editPost:
     URL: "https://github.com/Axu991"
     Text: "GitHub：Brizo"

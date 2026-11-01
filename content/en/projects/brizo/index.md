@@ -1,6 +1,6 @@
 ---
 title: "Bionic Robotic Fish Platform — Brizo"
-date: 2026-05-11
+date: 2024-09-01
 description: "Brizo is an agile bionic robotic fish platform designed for research and environmental monitoring. Features: 0.5m length, 0.5m/s cruise speed, and 1-hour battery life."
 cover:
     image: "cover.jpg"
