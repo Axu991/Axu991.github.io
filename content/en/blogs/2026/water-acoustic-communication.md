@@ -6,6 +6,8 @@ tags: ["Underwater Acoustics", "Communication", "Modulation", "OFDM", "Sonar", "
 categories: ["Engineering Notes"]
 ---
 
+{{< katex >}}
+
 ## Why acoustic communication?
 
 Underwater acoustic communication is the technology that uses sound waves to carry information through water. Electromagnetic waves (radio, Wi-Fi, Bluetooth) attenuate extremely fast in seawater — practical ranges are usually a few meters at most. Sound, by contrast, propagates hundreds of meters to tens of kilometers in the ocean, making it the only practical wireless medium underwater. The field has been developing for over a century, from early underwater bell navigation to modern underwater sensor networks.
@@ -25,6 +27,23 @@ The underwater acoustic channel is one of the most challenging in communications
 ### System structure
 
 A typical system consists of: transmitter (signal source → modulation → power amplifier → transducer), the acoustic channel, and receiver (transducer → preamplifier → demodulation → data processing). The core of the whole chain is modulation — how digital bits are encoded into sound.
+
+### The sonar equation
+
+Every acoustic system — communication modems, pingers, positioning arrays — obeys the same energy balance:
+
+$$SL - 2TL + TS - (NL - DI) = DT$$
+
+where $SL$ is the source level, $TL$ the transmission loss, $TS$ the target strength (receiver sensitivity for communication links), $NL$ the ambient noise, $DI$ the array directivity gain, and $DT$ the detection threshold. Two mechanisms drive the transmission loss: **spreading loss** (about 6 dB per doubling of distance) and **absorption loss**, which rises sharply with frequency:
+
+| Frequency | Absorption | Loss at 10 m |
+|---|---|---|
+| 10 kHz | ~3 dB/km | negligible |
+| 30 kHz | 10–20 dB/km | 0.2 dB |
+| 100 kHz | ~100 dB/km | 1 dB |
+| 200 kHz | ~300 dB/km | 3 dB |
+
+To increase range, you either raise the source level, improve processing (lower $DT$), or use a directional array (higher $DI$).
 
 ## OOK (On-Off Keying)
 
@@ -83,7 +102,9 @@ A typical system consists of: transmitter (signal source → modulation → powe
 |---|---|---|---|---|---|
 | OOK | Signal presence | Low | Weak | Simplest | Hundreds of bps |
 | FSK | Signal frequency | Medium-low | Medium | Simple | Thousands of bps |
+| FH-FSK | Frequency hopping across many carriers | Medium | Medium-high | Medium | 0.5–5 kbps |
 | PSK | Signal phase | Medium-high | Strong | Complex | Tens of thousands of bps |
+| S2C chirp | Linear frequency sweep, spread spectrum | High | Strong | Medium | 7–62 kbps |
 | OFDM | Parallel subcarriers | Highest | Strongest | Most complex | Hundreds of thousands of bps |
 
 Selection from simple to complex, by need:
@@ -92,6 +113,8 @@ Selection from simple to complex, by need:
 - Low-speed data with moderate interference → FSK.
 - Medium/high-speed, limited bandwidth → PSK.
 - High-speed with DSP capability → OFDM.
+
+**The physical limit.** The range–bandwidth trade-off is fundamental: kilometer-range links deliver about kbit/s, while 100-meter links manage tens of kbit/s. Even 60 kbit/s only carries CIF-quality video over roughly 300 m. Wireless high-definition video is not physically achievable underwater — untethered platforms store data on board and offload at the surface.
 
 ## Technology roadmap
 
@@ -123,6 +146,16 @@ Trend: from analog to digital, from non-coherent to coherent, from single-carrie
 
 7. **Jensen et al. (2016)** — *Software-defined underwater acoustic modems: Historical review and the NILUS approach*. Proposes software-defined modems using general-purpose hardware plus configurable software, supporting multiple bands and modulation schemes, moving the field from dedicated hardware to a reconfigurable platform.
 
+## Transducer fundamentals
+
+The transducer is the hardware core of any acoustic system — it converts electrical signals into sound waves (transmission) and back (reception):
+
+- **Hydrophone:** receives sound pressure and converts it to voltage.
+- **Projector (transmit transducer):** amplifies and radiates electrical signals as acoustic energy.
+- **Piezoelectric ceramic:** the most common transducer material, exploiting the reversible piezoelectric effect.
+- **Directivity index:** how focused the beam is. Narrow beams give high gain but require precise aiming; wide beams cover more area but are less sensitive.
+- **Operating frequency:** determines both transducer size and range — high-frequency transducers are small but short-ranged.
+
 ## References
 
 - Akyildiz I F, Pompili D, Melodia T. Underwater acoustic sensor networks: research challenges. *Ad Hoc Networks*, 2005, 3(3): 257–279.
@@ -132,3 +165,6 @@ Trend: from analog to digital, from non-coherent to coherent, from single-carrie
 - 水声通信与组网技术综述. 电子与信息学报, 2023.
 - Jensen S, et al. Software-defined underwater acoustic modems: Historical review and the NILUS approach. *IEEE Journal of Oceanic Engineering*, 2016.
 - Sherman D H, et al. Underwater acoustic positioning systems: A review. *Marine Geophysical Researches*, 2016.
+- Sendra S, et al. Underwater acoustic modems: A review. *Sensors*, 2016, 16(11): 1821. ([link](https://www.mdpi.com/1424-8220/16/11/1821))
+- Gallimore C, et al. The WHOI Micro-Modem. *OCEANS*, 2010. ([link](https://www.whoi.edu/what-we-do/explore/instruments/instruments-sensors-and-sampling-operations/micro-modem/))
+- EvoLogics S2C modem series. ([link](https://www.evologics.de/en/products/acoustics/index.html))

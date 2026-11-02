@@ -106,6 +106,30 @@ Acoustic positioning systems are classified by baseline length — the spacing b
 
 **3. The bandwidth–distance trade-off.** High frequencies (e.g. 70 kHz) give good directionality and accuracy but attenuate quickly and cover short ranges; low frequencies (e.g. 10 kHz) travel far but have poor directionality and lower accuracy. Once the transducer frequency is chosen, range and accuracy are largely fixed.
 
+## Positioning architectures: USBL, piUSBL, LBL, DVL
+
+Beyond the baseline classification, real platforms choose between four architectures, trading accuracy, cost, and deployment effort:
+
+| Architecture | Principle | Accuracy | Cost | Use case |
+|---|---|---|---|---|
+| USBL (ship-mounted) | Ship array measures slant range + bearing | 0.1–1% of slant range | $10k–100k | Ship-towed ROV tracking |
+| piUSBL (on-board) | Robot array listens to a beacon | 0.1% range, 0.1–1° bearing | <¥1k BOM (open source) | Diver follow-me, AUV navigation |
+| LBL (seafloor) | 3+ seafloor transponders, multilateration | Sub-meter (range-independent) | $50k+ | Fixed-site survey |
+| DVL | Doppler velocity log, dead reckoning | Drifts over hours | $5k+ | Combined with USBL/LBL |
+
+### How piUSBL works
+
+In the inverted (on-board) configuration, the robot carries a compact hydrophone array while the diver wears a small acoustic beacon that periodically emits short pulses. The robot measures the **Time Difference of Arrival (TDOA)** of each pulse across its hydrophones, solves the beacon's relative bearing, and fuses the result with an on-board pressure sensor for depth. Because the robot only listens and never transmits, it consumes very little power and does not betray its position.
+
+Two landmark papers established this approach:
+
+- **Rypkema et al. (MIT/IROS 2019)** validated piUSBL accuracy in controlled experiments: ~0.1% range accuracy (0.1 m error at 100 m), ~1° bearing accuracy, and hundreds of meters of operating range using a 5-hydrophone pyramidal array. The system is broadcast-based — one beacon can localize N robots simultaneously.
+- **Wang et al. (Zhejiang University, IEEE RA-L 2022)** engineered a full piUSBL system on a disc-shaped AUV and sea-tested it in the South China Sea — the direct engineering predecessor of the open-source Raspi2USBL project.
+
+The open-source [Raspi2USBL](https://arxiv.org/abs/2511.06998) (2025) reimplements the same architecture on a Raspberry Pi with four hydrophones, achieving 1.3 km tracking for under ¥1000 in parts.
+
+**Reference case: iBubble.** The commercial iBubble follow-me drone used exactly this architecture: a 4-hydrophone piUSBL + pressure sensor fusion, 1.5–6 m follow range (25 m max), 60 m depth rating, 90 min endurance, 9 kg mass, and a 90-second lost-signal auto-surface safety behavior.
+
 ## Engineering applications
 
 **Jiaolong manned submersible — USBL + LBL combined navigation.** Jiaolong, China's first 7,000-meter-class manned submersible, uses a combined USBL + LBL scheme. A USBL transducer on the mother ship tracks the submersible in real time, while a seabed LBL transponder array provides high-precision calibration. Sea trials show LBL accuracy exceeds USBL, but USBL is far more flexible to deploy — the two complement each other.
@@ -123,6 +147,32 @@ Acoustic positioning systems are classified by baseline length — the spacing b
 | Miniature USBL | Advanced Navigation, EvoLogics | Meter level | Hundreds of meters | Small ROV/AUV near-shore operations |
 | Open source | Raspi2USBL, piUSBL | Meter level | Tens to hundreds of meters | Research, prototype validation |
 
+### Product landscape
+
+| Platform | Type | Positioning | Depth | Price |
+|---|---|---|---|---|
+| SoFi (MIT) | Research prototype | BFSK remote | 18 m | Research |
+| iBubble evo | Follow-me drone | piUSBL | 60 m | ~$2999 |
+| FIFISH V-EVO | Tethered ROV | AI vision lock | 100 m | $1399 |
+| FIFISH V6 Plus | Tethered ROV | Dual sonar + USBL | 100 m | ~$2000 |
+| Hydrus | Autonomous ROV | DVL + USBL + INS | 300 m | Professional |
+| Slocum glider | Research platform | Dead reckoning + GPS surfacing | 1000 m | Research |
+| Raspi2USBL | Open source | piUSBL | Lab | <¥1k BOM |
+
+A notable trend: consumer follow-me platforms such as the FIFISH V-EVO have moved toward AI vision lock rather than pure acoustic follow, suggesting that acoustic-only follow has not yet become mainstream at the consumer price point.
+
+### Obstacle-avoidance sonar
+
+Short-range obstacle detection (0.5–6 m) is mandatory on every untethered platform:
+
+| Product | Type | Range | Accuracy |
+|---|---|---|---|
+| FIFISH Sonar Array | Single-beam | 0.5–6 m | ±5 cm |
+| Chasing Distance Lock | 4-direction | Several m | ±25 mm |
+| Chasing Omniscan 450FS | Forward imaging | Tens of m | Imaging-grade |
+| Ping 360 (BlueRobotics) | 360° scanning | 0.75–50 m | 1.6 mm @ 2 m |
+| iBubble obstacle sonar | Near-field | 1–1.5 m | — |
+
 ## References
 
 - Cestone, J. Precise Underwater Navigation. Quadripartite Meeting of the Institutes of Navigation, Rome, 1970.
@@ -132,3 +182,6 @@ Acoustic positioning systems are classified by baseline length — the spacing b
 - Yardim, S., et al. LBL System for Underwater Acoustic Positioning: Concept and Equations. arXiv:2204.08255, 2022. ([arXiv](https://arxiv.org/abs/2204.08255))
 - Sonardyne. The evolution of Sparse LBL (range-aiding): less is more in subsea positioning. 2026.
 - Raspi2USBL: An open-source Raspberry Pi-based passive inverted ultra-short baseline positioning system. ([GitHub](https://github.com/ethanjinhuang/Raspi2USBL), [arXiv](https://arxiv.org/html/2511.06998v1))
+- Rypkema N R, et al. Passive Inverted Ultra-Short Baseline (piUSBL) Localization: An Experimental Evaluation of Accuracy. *IEEE/RSJ IROS*, 2019.
+- Wang Y, et al. Passive Inverted Ultra-Short Baseline Positioning for a Disc-shaped Autonomous Underwater Vehicle: Design and Field Experiments. *IEEE RA-L*, 2022.
+- Katzschmann R K, et al. SoFi: Robotic Soft Fish for Untethered Observation. *Science Robotics*, 2018. ([link](https://www.science.org/doi/10.1126/scirobotics.aao6622))

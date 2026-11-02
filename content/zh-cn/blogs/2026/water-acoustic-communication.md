@@ -6,6 +6,8 @@ tags: ["水声通信", "调制方式", "OFDM", "水声信道", "piUSBL"]
 categories: ["技术笔记"]
 ---
 
+{{< katex >}}
+
 ## 为什么要用水声通信
 
 水声通信是利用声波在水中传递信息技术。电磁波（无线电、WiFi、蓝牙）在海水中衰减极快，传播距离通常不超过几米；而声波在海水中可以传播几百米到几十公里，因此成为水下无线通信的唯一可行手段。从早期水下钟导航，到现代水下传感器网络，这项技术已发展超过一百年。
@@ -25,6 +27,23 @@ categories: ["技术笔记"]
 ### 通信系统基本结构
 
 一个典型的水声通信系统包括：发射端（信号源 + 调制 + 功放 + 换能器）、水声信道、接收端（换能器 + 前放 + 解调 + 数据处理）。核心在于调制解调技术——如何把数字数据编进声波里。
+
+### 声呐方程
+
+所有声学系统——通信 modem、信标、定位阵列——都遵循同一个能量平衡方程：
+
+$$SL - 2TL + TS - (NL - DI) = DT$$
+
+其中 $SL$ 是声源级，$TL$ 是传播损失，$TS$ 是目标强度（通信链路中相当于接收灵敏度），$NL$ 是环境噪声，$DI$ 是阵列指向性增益，$DT$ 是检测阈值。传播损失由两部分构成：**扩展损失**（距离每翻一倍约损失 6 dB）和**吸收损失**（随频率急剧上升）：
+
+| 频率 | 吸收系数 | 10 米处损失 |
+|---|---|---|
+| 10 kHz | 约 3 dB/km | 可忽略 |
+| 30 kHz | 10~20 dB/km | 0.2 dB |
+| 100 kHz | 约 100 dB/km | 1 dB |
+| 200 kHz | 约 300 dB/km | 3 dB |
+
+要提高通信距离，要么提高声源级，要么改进信号处理（降低 $DT$），要么使用指向性阵列（提高 $DI$）。
 
 ## OOK（开关键控）
 
@@ -83,7 +102,9 @@ categories: ["技术笔记"]
 |---|---|---|---|---|---|
 | OOK | 信号有无 | 低 | 弱 | 最简单 | 几百 bps |
 | FSK | 信号频率 | 中低 | 中 | 简单 | 几千 bps |
+| FH-FSK | 多载波跳频 | 中 | 中高 | 中 | 0.5~5 kbps |
 | PSK | 信号相位 | 中高 | 强 | 复杂 | 几万 bps |
+| S2C 啁啾 | 线性扫频、扩频 | 高 | 强 | 中 | 7~62 kbps |
 | OFDM | 多载波并行 | 最高 | 最强 | 最复杂 | 几十万 bps |
 
 怎么选——从简单到复杂，按需选择：
@@ -92,6 +113,8 @@ categories: ["技术笔记"]
 - 需要低速传数据、抗干扰一般 → FSK。
 - 需要中高速、带宽有限 → PSK。
 - 需要高速通信、有 DSP 能力 → OFDM。
+
+**物理极限。** 距离与带宽的矛盾是根本性的：公里级链路只能到 kbps 量级，百米级链路能到几十 kbps。即使 60 kbps 也只能在约 300 米距离上传 CIF 画质视频。无线高清视频在水下物理上不可行——无线缆平台都选择板载存储、回水面再导出。
 
 ## 技术发展历程
 
@@ -123,6 +146,16 @@ categories: ["技术笔记"]
 
 7. **Jensen 等（2016）**——《Software-defined underwater acoustic modems: Historical review and the NILUS approach》。提出软件定义水声 modem 的概念，用通用硬件 + 可配置软件，支持多频段、多调制方式，推动了水声 modem 从专用硬件走向软件定义的通用平台。
 
+## 换能器基础
+
+换能器是任何声学系统的硬件核心——发射时把电信号转换成声波，接收时把声波转换成电信号：
+
+- **水听器（Hydrophone）：** 接收声压并转换为电压。
+- **发射换能器（Projector）：** 把电信号放大并辐射为声能。
+- **压电陶瓷：** 最常用的换能器材料，利用可逆的压电效应。
+- **指向性增益（Directivity Index）：** 波束聚焦程度。窄波束增益高但需要精确对准；宽波束覆盖广但灵敏度低。
+- **工作频率：** 同时决定换能器尺寸和通信距离——高频换能器体积小但作用距离短。
+
 ## 参考文献
 
 - Akyildiz I F, Pompili D, Melodia T. Underwater acoustic sensor networks: research challenges[J]. Ad Hoc Networks, 2005, 3(3): 257-279.
@@ -132,3 +165,6 @@ categories: ["技术笔记"]
 - 水声通信与组网技术综述[J]. 电子与信息学报, 2023.
 - Jensen S, et al. Software-defined underwater acoustic modems: Historical review and the NILUS approach[J]. IEEE Journal of Oceanic Engineering, 2016.
 - Sherman D H, et al. Underwater acoustic positioning systems: A review[J]. Marine Geophysical Researches, 2016.
+- Sendra S, et al. Underwater acoustic modems: A review[J]. Sensors, 2016, 16(11): 1821.（[链接](https://www.mdpi.com/1424-8220/16/11/1821)）
+- Gallimore C, et al. The WHOI Micro-Modem[C]. OCEANS, 2010.（[链接](https://www.whoi.edu/what-we-do/explore/instruments/instruments-sensors-and-sampling-operations/micro-modem/)）
+- EvoLogics S2C 系列 modem 产品资料.（[链接](https://www.evologics.de/en/products/acoustics/index.html)）

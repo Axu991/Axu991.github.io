@@ -106,6 +106,30 @@ $$\Delta\varphi = 2\pi \times \frac{d}{\lambda}$$
 
 **难题三：带宽与距离的矛盾。** 高频声波（如 70 kHz）方向性好、精度高，但衰减快、距离短；低频声波（如 10 kHz）传得远，但方向性差、精度低。换能器的工作频率一旦选定，测距范围和精度就基本定了。
 
+## 定位体制架构：USBL / piUSBL / LBL / DVL
+
+除了按基线分类，实际平台还会在四种体制之间权衡精度、成本与部署难度：
+
+| 体制 | 原理 | 精度 | 成本 | 适用场景 |
+|---|---|---|---|---|
+| USBL（船载） | 船上阵列测斜距 + 方位角 | 斜距的 0.1%~1% | 数万~数十万元 | 船载跟踪 ROV |
+| piUSBL（机载） | 机器人阵列听信标 | 0.1% 距离、0.1°~1° 方位角 | BOM < 1000 元（开源） | 潜水员跟拍、AUV 导航 |
+| LBL（海底） | 3 个以上海底应答器多点交汇 | 亚米级（与距离无关） | 数十万元以上 | 固定场地测量 |
+| DVL | 多普勒测速、航位推算 | 数小时内漂移 | 数千元以上 | 与 USBL/LBL 组合 |
+
+### piUSBL 工作原理
+
+在倒置（机载）配置中，机器人携带一个紧凑的水听器阵列，潜水员佩戴一个定期发射短脉冲的小型声学信标。机器人测量每个脉冲到达各水听器的**到达时间差（TDOA）**，解算信标的相对方位角，再结合机载压力传感器得到深度。因为机器人只收不发，功耗极低，也不会暴露自身位置。
+
+两篇里程碑论文奠定了这一方向：
+
+- **Rypkema 等（MIT/IROS 2019）** 通过受控实验验证了 piUSBL 精度：约 0.1% 距离精度（100 米处误差 0.1 米）、约 1° 方位角精度，使用 5 水听器金字塔阵列，工作距离数百米。系统是广播式的——一个信标可同时为 N 台机器人定位。
+- **Wang 等（浙江大学，IEEE RA-L 2022）** 在盘形 AUV 上工程化实现了完整 piUSBL 系统，并在南海完成海试——这是开源 Raspi2USBL 项目的直接工程前身。
+
+开源 [Raspi2USBL](https://arxiv.org/abs/2511.06998)（2025）用树莓派 + 4 水听器复现了同一架构，BOM 成本不到 1000 元实现 1.3 km 跟踪。
+
+**参考案例：iBubble。** 商用 iBubble 跟拍无人机正是采用这一架构：4 水听器 piUSBL + 压力传感器融合，1.5~6 米跟拍距离（最大 25 米）、60 米深度、90 分钟续航、9 kg 重量，以及 90 秒失联自动上浮的安全行为。
+
 ## 实际工程应用案例
 
 **蛟龙号载人潜水器：USBL+LBL 组合导航。** 蛟龙号是中国首台 7000 米级载人潜水器，采用 USBL+LBL 组合定位方案。母船船底安装 USBL 换能器，实时跟踪潜水器位置；海底布放 LBL 应答器阵列，提供高精度位置校准。海试结果表明：LBL 精度优于 USBL，但 USBL 部署更灵活，两者互补使用。
@@ -123,6 +147,32 @@ $$\Delta\varphi = 2\pi \times \frac{d}{\lambda}$$
 | 微型 USBL | Advanced Navigation、EvoLogics | 米级 | 数百米 | 小型 ROV/AUV 近岸作业 |
 | 开源方案 | Raspi2USBL、piUSBL | 米级 | 数十~数百米 | 科研、原型验证 |
 
+### 产品全景
+
+| 平台 | 类型 | 定位方式 | 深度 | 价格 |
+|---|---|---|---|---|
+| SoFi（MIT） | 科研原型 | BFSK 遥控 | 18 m | 科研 |
+| iBubble evo | 跟拍无人机 | piUSBL | 60 m | 约 $2999 |
+| FIFISH V-EVO | 缆控 ROV | AI 视觉锁定 | 100 m | $1399 |
+| FIFISH V6 Plus | 缆控 ROV | 双声呐 + USBL | 100 m | 约 $2000 |
+| Hydrus | 自主 ROV | DVL + USBL + INS | 300 m | 专业级 |
+| Slocum 水下滑翔机 | 科研平台 | 航位推算 + 出水 GPS | 1000 m | 科研 |
+| Raspi2USBL | 开源 | piUSBL | 实验室 | BOM < 1000 元 |
+
+一个值得注意的趋势：FIFISH V-EVO 等消费级跟拍平台转向 AI 视觉锁定而非纯声学跟拍，说明纯声学跟拍在消费级价位尚未成为主流。
+
+### 避障声呐
+
+每个无线缆平台都必须具备短距离避障（0.5~6 米）：
+
+| 产品 | 类型 | 距离 | 精度 |
+|---|---|---|---|
+| FIFISH Sonar Array | 单波束 | 0.5~6 m | ±5 cm |
+| Chasing Distance Lock | 四向 | 数米 | ±25 mm |
+| Chasing Omniscan 450FS | 前视成像 | 数十米 | 成像级 |
+| Ping 360（BlueRobotics） | 360° 扫描 | 0.75~50 m | 2 m 处 1.6 mm |
+| iBubble 避障声呐 | 近场 | 1~1.5 m | — |
+
 ## 参考文献
 
 - Cestone, J. Precise Underwater Navigation. Quadripartite Meeting of the Institutes of Navigation, Rome, 1970.
@@ -132,3 +182,6 @@ $$\Delta\varphi = 2\pi \times \frac{d}{\lambda}$$
 - Yardim, S., et al. LBL System for Underwater Acoustic Positioning: Concept and Equations. arXiv:2204.08255, 2022.（[arXiv](https://arxiv.org/abs/2204.08255)）
 - Sonardyne. The evolution of Sparse LBL (range-aiding): less is more in subsea positioning. 2026.
 - Raspi2USBL: An open-source Raspberry Pi-based passive inverted ultra-short baseline positioning system.（[GitHub](https://github.com/ethanjinhuang/Raspi2USBL)、[arXiv](https://arxiv.org/html/2511.06998v1)）
+- Rypkema N R, et al. Passive Inverted Ultra-Short Baseline (piUSBL) Localization: An Experimental Evaluation of Accuracy[C]. IEEE/RSJ IROS, 2019.
+- Wang Y, et al. Passive Inverted Ultra-Short Baseline Positioning for a Disc-shaped Autonomous Underwater Vehicle: Design and Field Experiments[J]. IEEE RA-L, 2022.
+- Katzschmann R K, et al. SoFi: Robotic Soft Fish for Untethered Observation[J]. Science Robotics, 2018.（[链接](https://www.science.org/doi/10.1126/scirobotics.aao6622)）
