@@ -8,6 +8,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.11.11**  Started building an ROV.
+
 **2026.11.02**  Published *ADC Key Parameters Explained: From Bandwidth to Effective Resolution*.
 
 **2026.11.01**  Published *Underwater Acoustic Positioning: Principles, Methods, and Systems*.
