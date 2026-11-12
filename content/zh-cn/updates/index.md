@@ -9,6 +9,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.11.12**  打通 Pixhawk + ArduSub，在 QGC 下完成电机驱动。
+
 **2026.11.11**  开始制作 ROV。
 
 **2026.11.02**  发布《ADC 关键参数详解：从带宽到有效分辨率》。
