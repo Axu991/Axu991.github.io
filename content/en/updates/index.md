@@ -8,6 +8,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.11.14**  Completed the Raspberry Pi → Pixhawk → motor chain, driving motors from a Python control script.
+
 **2026.11.12**  Got Pixhawk + ArduSub up and running, with motors driving from QGC.
 
 **2026.11.11**  Started building an ROV.

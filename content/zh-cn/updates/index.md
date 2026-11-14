@@ -9,6 +9,8 @@ type: "updates"
 
 <div class="update-log">
 
+**2026.11.14**  打通树莓派 → Pixhawk → 电机驱动链路，可用 Python 脚本下发电机控制指令。
+
 **2026.11.12**  打通 Pixhawk + ArduSub，在 QGC 下完成电机驱动。
 
 **2026.11.11**  开始制作 ROV。
